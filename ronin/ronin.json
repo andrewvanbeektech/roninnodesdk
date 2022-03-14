@@ -1,0 +1,108 @@
+{
+    "path": "https://iron-ember-hardhat.glitch.me",
+    "policies": [
+      {
+        "authorizationServer": "",
+        "applyType": "global",
+        "name": "SDK DEMO Policy",
+        "rules": [
+          {
+            "value": "0oa1116jerlSuT8MK0h8",
+            "decisionType": "equals",
+            "name": "Matches Application",
+            "desiredOutcome": "Allow Access",
+            "key": "cid",
+            "userDrivenPermissions": false,
+            "knownUsersOnly": false,
+            "keyType": "claim"
+          }
+        ]
+      }
+    ],
+    "globalPolicies": [
+      {
+        "name": "policy y",
+        "applyType": "global",
+        "authorizationServer": "https://udp-avb-poc-1c2.oktapreview.com/oauth2/ausvanzsxqXe4fiIr0h7",
+        "priority": 1,
+        "rules": [
+          {
+            "decisionType": "equals",
+            "keyType": "claim",
+            "name": "Whatever Check",
+            "key": "sub",
+            "value": "andrew.vanbeek@okta.com"
+          },
+          {
+            "key": "groups",
+            "name": "duplicate",
+            "value": "roles::adminfdsfdsfdsfdsf",
+            "keyType": "claim",
+            "decisionType": "include"
+          },
+          {
+            "keyType": "scope",
+            "value": "opsrgop9ro9ug89rug89uyres9",
+            "name": "cheeky rule",
+            "key": "scp",
+            "decisionType": "include"
+          }
+        ]
+      },
+      {
+        "authorizationServer": "https://udp-avb-poc-1c2.oktapreview.com/oauth2/ausvanzsxqXe4fiIr0h7",
+        "applyType": "global",
+        "rules": [
+          {
+            "keyType": "claim",
+            "decisionType": "equals",
+            "name": "duplicate",
+            "value": "test",
+            "key": "whatever",
+            "priority": 2
+          },
+          {
+            "value": "blue",
+            "keyType": "claim",
+            "decisionType": "equals",
+            "name": "favorite color is blue",
+            "key": "color"
+          }
+        ],
+        "priority": 2,
+        "name": "policy x"
+      },
+      {
+        "name": "New Global Policy",
+        "applyType": "global",
+        "regex": "/*",
+        "authorizationServer": "https://someoauthserver.com",
+        "rules": [
+          {
+            "name": "Cheeky Rule ",
+            "key": "scp",
+            "priority": 2,
+            "value": "openid",
+            "decisionType": "equals",
+            "keyType": "scope"
+          },
+          {
+            "key": "role",
+            "decisionType": "equals",
+            "name": "brand new rule",
+            "value": "admin",
+            "keyType": "claim",
+            "priority": 1
+          },
+          {
+            "value": "broker",
+            "name": "check if you are part of the brokers group",
+            "key": "groups",
+            "decisionType": "include",
+            "keyType": "claim"
+          }
+        ],
+        "priority": 3
+      }
+    ]
+  }

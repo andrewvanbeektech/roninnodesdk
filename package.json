@@ -1,0 +1,19 @@
+{
+  "name": "roninsdk",
+  "version": "1.4.9",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@okta/jwt-verifier": "^2.3.0",
+    "axios": "^0.21.1",
+    "jose": "^4.3.7",
+    "request-ip": "^2.1.3",
+    "sqlite": "^4.0.23",
+    "sqlite3": "^5.0.2"
+  }
+}
